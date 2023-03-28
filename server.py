@@ -4,11 +4,12 @@ from Answer.ChatGptAnswer import *
 import json
 
 app = Flask(__name__)
-os.environ["appkey"] = "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"
-os.environ["token"] = "123"
+
 appkey = os.getenv('appkey')
 token = os.getenv('token')
 models=['gpt-3.5-turbo']
+print(appkey)
+print(token)
 
 error_response = {'code': -1, 'msg': '数据错误'}
 
