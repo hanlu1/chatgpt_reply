@@ -7,9 +7,11 @@ app = Flask(__name__)
 
 appkey = os.getenv('appkey')
 token = os.getenv('token')
+PORT = int(os.getenv('PORT'))
 models=['gpt-3.5-turbo']
 print(appkey)
 print(token)
+print(PORT)
 
 error_response = {'code': -1, 'msg': '数据错误'}
 
@@ -34,4 +36,4 @@ def api():
 
 if __name__ == '__main__':
     # 默认开启 debug 模式，生产环境请设置成 False
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=PORT, debug=True)
